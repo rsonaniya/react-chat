@@ -89,7 +89,7 @@ export default class LoginPage extends Component<{}, LoginPageState> {
       const userId = authUser.user.uid;
 
       const userData = {
-        name: this.state.formData.name,
+        name: this.state.formData.name.toLowerCase(),
         email: authUser.user.email,
         imageUrl:
           this.state.formData.imageUrl ||
@@ -123,7 +123,7 @@ export default class LoginPage extends Component<{}, LoginPageState> {
           this.context?.setUser(userDataFromGoogle);
         }
       } else {
-        const name = authUser.user.displayName;
+        const name = authUser.user?.displayName?.toLowerCase();
         const email = authUser.user.email;
         const imageUrl =
           authUser.user.photoURL ||

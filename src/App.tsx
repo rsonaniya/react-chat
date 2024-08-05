@@ -35,7 +35,6 @@ export default class App extends Component {
 
       if (docSnap.exists()) {
         const userData = docSnap.data();
-        console.log("User data:", userData);
         return userData;
       } else {
         console.log("No such document!");

@@ -86,7 +86,7 @@ export default class LoginPage extends Component<{}, LoginPageState> {
           this.context?.setUser(userDataFromGoogle);
         }
       } else {
-        const name = authUser.user.displayName;
+        const name = authUser.user?.displayName?.toLowerCase();
         const email = authUser.user.email;
         const imageUrl =
           authUser.user.photoURL ||
@@ -122,7 +122,7 @@ export default class LoginPage extends Component<{}, LoginPageState> {
 
       if (docSnap.exists()) {
         const userData = docSnap.data();
-        console.log("User data:", userData);
+
         return userData;
       } else {
         console.log("No such document!");

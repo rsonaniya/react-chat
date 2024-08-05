@@ -31,7 +31,6 @@ class UserContextProvider extends Component<
       user: this.state.user!,
       setUser: this.setUser,
     };
-    console.log(this.state.user);
     return (
       <UserContext.Provider value={contextValue}>
         {this.props.children}
