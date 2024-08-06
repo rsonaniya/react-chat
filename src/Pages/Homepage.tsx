@@ -4,7 +4,6 @@ import {
   Input,
   InputAdornment,
   Modal,
-  Paper,
   styled,
   Typography,
 } from "@mui/material";
@@ -12,7 +11,7 @@ import React, { Component } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import { IoPersonAddSharp } from "react-icons/io5";
 import CloseIcon from "@mui/icons-material/Close";
-import UserContext, { UserContextInterface } from "../Context/userContext";
+import UserContext from "../Context/userContext"; // UserContextInterface
 import {
   doc,
   DocumentData,
@@ -34,15 +33,8 @@ import AddUserComponent from "../Components/AddUserComponent";
 
 import { db } from "../firebase";
 import ChatUserBox from "../Components/ChatUserBox";
-import { toast } from "react-toastify";
-import { capitalize } from "../utils/capitalize";
-import moment from "moment";
-import ChatMessage from "../Components/ChatMessage";
 
-const exampleChatsData = [
-  { id: 1, lastMessage: "kljdhfurbd djhbfnds hsjhs" },
-  {},
-];
+import ChatMessage from "../Components/ChatMessage";
 
 interface HomePageState {
   isAddUserModalVisible: boolean;
@@ -70,6 +62,7 @@ export default class Homepage extends Component<{}, HomePageState> {
   }
 
   componentDidMount(): void {
+    //eslint-disable-next-line
     const unsub = onSnapshot(
       doc(db, "userchats", `${this.context?.user?.userId}`),
       async (res) => {
@@ -196,7 +189,7 @@ export default class Homepage extends Component<{}, HomePageState> {
   };
   render() {
     console.log(this.state.usersFromSearch);
-    const { user, setUser } = this.context as UserContextInterface;
+    // const { user, setUser } = this.context as UserContextInterface;
 
     return (
       <Wrapper>
@@ -273,7 +266,7 @@ export default class Homepage extends Component<{}, HomePageState> {
                 <Box className="chat-messages">
                   <ChatMessage
                     message="this is a sample text message sent by the current user"
-                    sendAt={`${new Date()}`}
+                    sendAt={`${new Date("2024-08-05T01:18:34.099Z")}`}
                     isOwn
                   />
                   <ChatMessage

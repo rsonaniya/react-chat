@@ -14,7 +14,11 @@ export default class ChatUserBox extends Component<ChatUserBoxProps> {
     return (
       <Wrapper onClick={() => this.props.onUserChange(this.props.user)}>
         <Box className={`user-box ${active && "active"}`}>
-          <img src={this.props.user.imageUrl} className="user-avatar" />
+          <img
+            src={this.props.user.imageUrl}
+            className="user-avatar"
+            alt={this.props.user.name}
+          />
           <Box className="user">
             <Typography className="user-name">
               {capitalize(this.props.user.name)}

@@ -17,7 +17,9 @@ export default class ChatMessage extends Component<ChatMessageProps> {
         className="chat-message"
         sx={{ alignSelf: isOwn ? "end" : "start" }}
       >
-        {!isOwn && <img src={imageUrl} className="chat-user-img" />}
+        {!isOwn && (
+          <img src={imageUrl} className="chat-user-img" alt="user-image" />
+        )}
         <Box className="chat-message-detail">
           <Typography className={`chat-user-msg ${isOwn && "own"}`}>
             {message}

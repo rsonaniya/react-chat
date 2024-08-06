@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NavBar from "./Components/NavBar";
-import UserContext, { UserContextInterface } from "./Context/userContext";
+import UserContext from //  UserContextInterface
+"./Context/userContext";
 import LoginPage from "./Pages/LoginPage";
 import ProtectRoute from "./Components/ProtectRoute";
 import SignUpPage from "./Pages/SignUpPage";
@@ -49,7 +50,7 @@ export default class App extends Component {
     if (!this.context) {
       return null;
     }
-    const { user, setUser } = this.context as UserContextInterface;
+    // const { user, setUser } = this.context as UserContextInterface;
 
     return (
       <BrowserRouter>

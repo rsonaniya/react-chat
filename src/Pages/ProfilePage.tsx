@@ -2,19 +2,13 @@ import * as React from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { Link } from "react-router-dom";
-import {
-  CircularProgress,
-  IconButton,
-  InputAdornment,
-  Paper,
-  styled,
-} from "@mui/material";
+
+import { CircularProgress, Paper, styled } from "@mui/material";
 import {
   getStorage,
   ref,
@@ -23,13 +17,12 @@ import {
 } from "firebase/storage";
 
 import { Component } from "react";
-import { app, auth, db } from "../firebase";
+import { app, db } from "../firebase";
 import { toast } from "react-toastify";
 import UserContext, {
-  CurrentUser,
+  // CurrentUser,
   UserContextInterface,
 } from "../Context/userContext";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 interface ProfilePageState {
   formData: {
@@ -155,7 +148,7 @@ export default class LoginPage extends Component<{}, ProfilePageState> {
   };
 
   render() {
-    const { user, setUser } = this.context as UserContextInterface;
+    // const { user, setUser } = this.context as UserContextInterface;
 
     return (
       <Wrapper>

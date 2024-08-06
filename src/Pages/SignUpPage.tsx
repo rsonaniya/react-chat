@@ -16,7 +16,6 @@ import { Link, Navigate } from "react-router-dom";
 import {
   CircularProgress,
   IconButton,
-  Input,
   InputAdornment,
   Paper,
   styled,
@@ -31,7 +30,7 @@ import {
 import { Component } from "react";
 import { app, auth, db } from "../firebase";
 import { toast } from "react-toastify";
-import UserContext, { UserContextInterface } from "../Context/userContext";
+import UserContext from "../Context/userContext";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { FaGoogle } from "react-icons/fa";
 

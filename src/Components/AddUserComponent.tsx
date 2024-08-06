@@ -12,7 +12,11 @@ export default class AddUserComponent extends Component<AddUserProps> {
   render() {
     return (
       <Wrapper>
-        <img src={this.props.user.imageUrl} className="user-avatar" />
+        <img
+          src={this.props.user.imageUrl}
+          className="user-avatar"
+          alt="user-avatar"
+        />
         <Typography>{capitalize(this.props.user.name)}</Typography>
         <Button
           sx={{

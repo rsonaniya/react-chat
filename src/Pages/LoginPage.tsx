@@ -16,7 +16,8 @@ import { IconButton, InputAdornment, Paper, styled } from "@mui/material";
 import { Component } from "react";
 import { auth, db } from "../firebase";
 import { toast } from "react-toastify";
-import UserContext, { UserContextInterface } from "../Context/userContext";
+import UserContext from //  { UserContextInterface }
+"../Context/userContext";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { getDoc, doc, setDoc } from "firebase/firestore";
 import { FaGoogle } from "react-icons/fa";
